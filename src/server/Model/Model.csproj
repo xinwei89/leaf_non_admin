@@ -1,0 +1,32 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <!-- <TargetLatestRuntimePatch>true</TargetLatestRuntimePatch> -->
+    <TieredCompilation>true</TieredCompilation>
+    <ReleaseVersion>3.1</ReleaseVersion>
+  </PropertyGroup>
+  <PropertyGroup>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Folder Include="Collections\" />
+    <Folder Include="Anonymization\" />
+    <Folder Include="Validation\" />
+    <Folder Include="Schema\" />
+    <Folder Include="Search\" />
+    <Folder Include="Error\" />
+    <Folder Include="Admin\Network\" />
+    <Folder Include="Notification\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Composure" Version="1.1.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="2.2.0" />
+    <PackageReference Include="Microsoft.Extensions.Options" Version="2.2.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Compiler\appsettings.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Import\ImportMappingQuery.cs" />
+  </ItemGroup>
+</Project>

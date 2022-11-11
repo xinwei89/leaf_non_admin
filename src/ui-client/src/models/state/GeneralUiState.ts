@@ -1,0 +1,123 @@
+/* Copyright (c) 2020, UW Medicine Research IT, University of Washington
+ * Developed by Nic Dobbins and Cliff Spital, CRIO Sean Mooney
+ * This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/.
+ */ 
+
+import { RouteConfig } from "../../config/routes";
+import { SavedQueryRef } from "../Query";
+
+export enum Routes {
+    FindPatients = 1,
+    Map = 2,
+    Visualize = 3,
+    Timelines = 4,
+    PatientList = 5,
+    AdminPanel = 6
+}
+
+export enum NotificationStates {
+    Working = 1,
+    Complete = 2,
+    Hidden = 3
+}
+
+export enum UserInquiryType {
+    HelpMakingQuery = 1,
+    DataRequest = 2,
+    Other = 3
+}
+
+export interface CohortCountBoxState {
+    boxVisible: boolean;
+    boxMinimized: boolean;
+    infoButtonVisible: boolean;
+}
+
+export interface UserInquiryState {
+    associatedQuery?: SavedQueryRef;
+    email?: string;
+    show: boolean;
+    type: UserInquiryType;
+    text: string;
+}
+
+export interface UserInquiry {
+    associatedQuery?: SavedQueryRef;
+    email?: string;
+    show: boolean;
+    type?: UserInquiryType;
+    text?: string;
+}
+
+export interface InformationModalState {
+    body: any;
+    header: string;
+    onClickOkay?: any;
+    show: boolean;
+}
+
+export interface ConfirmationModalState {
+    body: any;
+    header: string;
+    onClickCancel?: any;
+    onClickNo: any;
+    onClickYes: any;
+    noButtonText: string;
+    yesButtonText: string;
+    show: boolean;
+}
+
+export interface NoClickModalState {
+    message?: string;
+    state: NotificationStates;
+}
+
+export interface SideNotificationState {
+    message?: string;
+    state: NotificationStates;
+}
+
+export interface GeneralUiState {
+    browser?: Browser;
+    cohortCountBox: CohortCountBoxState;
+    confirmationModal: ConfirmationModalState;
+    currentRoute: Routes;
+    currentMyLeafTab: MyLeafTabType,
+    informationModal: InformationModalState;
+    noclickModal: NoClickModalState;
+    routes: RouteConfig[];
+    showImportMrnModal: boolean;
+    showImportRedcapModal: boolean;
+    showMyLeafModal: boolean;
+    showExportDataModal: boolean;
+    showSaveQueryPane: boolean;
+    sideNotification: SideNotificationState;
+    userQuestion: UserInquiryState;
+}
+
+export enum MyLeafTabType {
+    SavedQueries = '1',
+    REDCapImport = '2',
+    AdminUserQuery = '3'
+}
+
+export enum BrowserType { 
+    Chrome = 1,
+    Edge = 2,
+    Firefox = 3,
+    InternetExplorer = 4,
+    Opera = 5,
+    Safari = 6,
+    Other = 7
+}
+
+export interface Browser {
+    error?: boolean;
+    majorVersion: number;
+    type: BrowserType;
+    version: string;
+}
+
+    

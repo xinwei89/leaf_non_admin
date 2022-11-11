@@ -1,0 +1,57 @@
+/* Copyright (c) 2020, UW Medicine Research IT, University of Washington
+ * Developed by Nic Dobbins and Cliff Spital, CRIO Sean Mooney
+ * This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/.
+ */ 
+
+ .cohort-summary-container {
+    font-family: Roboto;
+    font-weight: 500;
+    overflow-y: visible;
+    padding: 0;
+    text-align: center;
+    width: inherit;
+}
+
+.cohort-summary-count {
+    color: white;
+    display: inline-block;
+    font-size: 1.7rem;
+    margin-top: -6px;
+}
+
+.cohort-summary-count-patients {
+    color: white;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.cohort-summary-name {
+    color: rgb(255, 239, 91);
+    font-size: 1.1rem;
+    font-weight: 500;
+    max-width: 400px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.cohort-summary-info-box {
+    color: white;
+    font-size: 1.3rem;
+    display: inline-block;
+    opacity: 0;
+    transition: all 0.5s;
+    vertical-align: bottom;
+}
+
+.cohort-summary-info-box.show {
+    cursor: pointer;
+    margin-left: 10px;
+    opacity: 0.6;
+}
+
+.cohort-summary-info-box.show:hover {
+    opacity: 1;
+}

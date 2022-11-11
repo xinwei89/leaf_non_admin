@@ -1,0 +1,1 @@
+The Leaf documentation site has moved! Please go to [https://leafdocs.rit.uw.edu/](https://leafdocs.rit.uw.edu/) to learn more about installing, configuring, and administering Leaf.

@@ -1,0 +1,55 @@
+version: '3'
+services:
+
+  db:
+    build:
+      context: ./db/build
+      args:
+        - sapw=${SA_PASSWORD}
+    # image: leaf_db
+    container_name: leaf_db_demo
+    ports:
+      - 1433:1433
+    restart: always
+    networks:
+      - leaf
+
+  server:
+    build: ./server
+    # image: leaf_api
+    container_name: leaf_api_demo
+    volumes:
+      - server-log:/logs
+    extra_hosts:
+      - host.docker.internal:host-gateway
+    environment:
+      - LEAF_APP_DB=${LEAF_APP_DB}
+      - LEAF_CLIN_DB=${LEAF_CLIN_DB}
+      - LEAF_JWT_KEY_PW=${LEAF_JWT_KEY_PW}
+      - UnsecuredIsAdmin=${UnsecuredIsAdminProd}
+    restart: always
+    networks:
+      - leaf
+    depends_on:
+      - db
+
+  ui-client:
+    build:
+      context: ./ui-client
+    container_name: leaf_ui
+    ports:
+      - 80:80
+    restart: always
+    networks:
+      - leaf
+    stdin_open: true
+    depends_on:
+      - db
+      - server
+
+networks:
+  leaf:
+
+
+volumes:
+  server-log:

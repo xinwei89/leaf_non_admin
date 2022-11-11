@@ -1,0 +1,174 @@
+/* Copyright (c) 2020, UW Medicine Research IT, University of Washington
+ * Developed by Nic Dobbins and Cliff Spital, CRIO Sean Mooney
+ * This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/.
+ */ 
+
+ .concept-tree-learn-more-button {
+    background-color: white;
+    border-radius: 4px;
+    border: 1px solid rgba(200,200,200,0.5);
+    color: rgb(200,200,200);
+    cursor: pointer;
+    display: none;
+    font-family: Roboto;
+    font-weight: 500;
+    margin: 0 15px;
+    padding: 6px 8px 2px 4px;
+    position: absolute;
+    bottom: -2.5rem;
+    right: -15px;
+    z-index: 100;
+}
+
+.concept-tree-learn-more-universalid {
+    font-size: 0.9rem;
+}
+
+.concept-tree-learn-more-universalid-value {
+    background-color: rgb(231, 255, 231);
+    border-radius: 8px;
+    color: rgb(1, 105, 1);
+    padding: 4px 8px;;
+}
+
+.concept-tree-learn-more-universalid-none {
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    color: rgb(50, 50, 50);
+    padding: 4px 8px;;
+}
+
+.concept-tree-learn-more-button > div {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.concept-tree-node:hover .concept-tree-learn-more-button {
+    display: block;
+}
+
+.concept-tree-learn-more-button:hover {
+    color:rgb(28, 168, 221);
+}
+
+.concept-tree-learn-more-button svg {
+    font-size: 1.4rem;
+    margin-right:6px;
+    transform: scaleY(0.8);
+    stroke-width: 4;
+    stroke-linecap: square;
+}
+
+.concept-tree-learn-more-button:hover svg {
+    color:rgb(255, 132, 8);
+}
+
+.popup-box.appear .concept-tree-learn-more {
+    opacity: 0;
+}
+
+.concept-tree-learn-more {
+    background-color: white;
+    border: 1px solid rgb(230,230,230);
+    border-radius: 4px;
+    box-shadow: 0px 4px 9px rgba(0, 0, 0, 0.24);
+    color: rgb(50, 50, 50);
+    font-family: Roboto;
+    font-size: 1.2rem;
+    font-weight: 300;
+    max-width: 1000px;
+    min-width: 400px;
+    opacity: 1;
+    padding: 10px;
+    position: fixed;
+    transition: all 0.5s;
+    transform: translate(-50%, -50%);
+}
+
+.concept-tree-learn-more.offset-top {
+    margin-top: 100px;
+}
+
+.concept-tree-learn-more.offset-bottom {
+    margin-top: -250px;
+}
+
+.concept-tree-learn-more tspan {
+    fill: black;
+    font-size: 0.8rem;
+    font-weight: 300;
+}
+
+.concept-tree-learn-more-title {
+    font-size: 1.1rem;
+    margin-bottom: 6px;
+    text-align: center;
+}
+
+.concept-tree-learn-more-separator,
+.concept-tree-learn-more-separator-long {
+    border-bottom: 1px solid rgba(200,200,200,1.0);
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+.concept-tree-learn-more-separator-long {
+    margin: 12px 0 0;
+}
+
+.concept-tree-learn-more-separator-chart {
+    display: block;
+    margin: auto;
+}
+
+.concept-tree-learn-more-axis-label tspan {
+    fill: rgba(0,0,0,0.6) !important;
+    font-size: 1.2rem;
+    font-family: 'Mukta Mahee';
+    font-weight: 500;
+}
+
+.concept-tree-learn-more-info,
+.concept-tree-learn-more-noinfo {
+    font-size: 1rem;
+    margin-bottom: 6px;
+    margin-top: 14px;
+}
+
+.concept-tree-learn-more-info > textarea {
+    border: none;
+    color: rgba(0,0,0,0.8);
+    pointer-events: none;
+    resize: none;
+    width: 100%;
+}
+
+.concept-tree-learn-more-info > p {
+    margin-bottom: 2px;
+}
+
+.concept-tree-learn-more-noinfo {
+    text-align: center;
+}
+
+.concept-tree-learn-more-info-tab {
+    margin-left: 14px;
+}
+
+.concept-tree-learn-more-show-all-years {
+    margin: 20px 0 -10px 0;
+    text-align: right;
+}
+
+.concept-tree-learn-more-show-all-years > div {
+    display: inline-block;
+}
+
+.concept-tree-learn-more-show-all-years-text {
+    color: rgb(50, 50, 50);
+    font-size: 1.0rem;
+    margin-right: 8px;
+    vertical-align: top;
+}

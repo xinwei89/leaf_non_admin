@@ -1,0 +1,8 @@
+*/bin/
+*/out/
+*/.vs
+.vscode
+*.bak
+.git
+src/ui-client/node_modules
+src/ui-client/build
